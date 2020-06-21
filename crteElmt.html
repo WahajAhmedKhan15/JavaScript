@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><Page Title></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+        #atrbte
+        {
+            color: blueviolet;
+        }
+    </style>
+    <script>
+        function chng()
+        {
+
+            var hdng= document.createElement("h2"); //first we create new elemnt for hdng
+            var txtH=document.createTextNode("Third Paragraph"); //then we assign text to it
+            hdng.appendChild(txtH);                                           // then we add text to new elemnt hdng
+
+            //we use apndchild bcz h2 is a chid node to div.
+            //we use crtetxtnode to assgn txt to hdng.
+
+            var apnd=document.getElementById("main"); //then we add this txt to our main div
+            apnd.appendChild(hdng);
+
+            //change in attribute
+
+            var atr =document.createAttribute("id"); //create attribute
+            atr.value="atrbte";                        //assign CSS
+            hdng.setAttributeNode(atr);             // using setatrbutenode object 
+
+
+            var parag= document.createElement("p"); //first we create new elemnt for paragraph
+            var txt=document.createTextNode("Pakistan has four provinces."); //then we assign text to it
+            parag.appendChild(txt);                                           // then we add text to new elemnt
+
+            //we use apndchild bcz p is a chid node to div.
+            //we use crtetxtnode to assgn txt to paragraph.
+
+            apnd.appendChild(parag);
+        }
+        function clr()
+        {
+            var dfnpostn=document.getElementsByTagName("h2")[2]; //here we give postion the heading we want to remove starting from 0 
+            var dvPrnt =dfnpostn.parentNode; //here we save full div in sigle variable to remove it in next step
+            dvPrnt.removeChild(dfnpostn);
+
+            var dfnpostnPara=document.getElementsByTagName("p")[3];
+            dvPrnt.removeChild(dfnpostnPara);
+        }
+
+    </script>
+</head>
+<body>
+    <div id="main">
+        <h2>First Paragraph</h2>
+        <p>
+            This is the first paragraph. Islamabad is the capital of Pakistan.
+        </p>
+        <h2>Second Paragraph</h2>
+        <p>
+            This is the second paragraph. karachi is the first capital of Pakistan.
+        </p>
+        <p>Pakistan is an Islamic state where every one can worship there religion peacefully.</p>
+    
+    </div>
+    <button onclick="chng()">Learn More</button>
+    <button onclick="clr()">Clear</button>
+</body>
+</html>
