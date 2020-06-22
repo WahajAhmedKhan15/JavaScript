@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        function vldtn()
+        {
+            var nme=document.getElementById("name");
+            var eml=document.getElementById("email");
+            var pas=document.getElementById("password");
+            if(nme.value=="")
+            {
+            alert("Empty Field.");
+            nme.focus();
+            nme.style.border="solid 3px red";
+            return false;   
+           //here we return false bcz it will not go to message page
+            }
+            else if(eml.value=="")
+            {
+            alert("Empty Field.");
+            eml.focus();
+            eml.style.border="solid 3px red";
+            return false;
+ 
+            }
+
+            else if(pas.value=="") 
+            {
+            alert("Empty Field.");
+            pas.focus();
+            pas.style.border="solid 3px red"; 
+            return false;
+
+            }
+
+            else
+            alert("Submitted");
+            
+
+        }
+    </script>
+</head>
+<body> 
+    <form method="POST" action="message.html" onsubmit="return vldtn()" >  
+    <div style="text-align: center;">
+        <label>NAME: </label><input type="text" id="name"><br><br>
+        <label>EMAIL: </label><input type="text" id="email"><br><br>
+        <label>PASSWORD: </label> <input type="password" id="password"><br><br>
+        <button>Submit</button>
+
+    </div>
+</form>
+</body>
+</html>
