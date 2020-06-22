@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+         function chng()
+        {
+
+            var dv=document.getElementById("main");
+            var chld= dv.childNodes[3]; //here we give index and line gap also counts in it
+            //var chld=dv.firstElementChild; //we can also give position like this
+            chld.style.color="blue";
+
+        }
+        function chnge()
+        {
+
+            var dv=document.getElementById("para");
+            var prnt= dv.parentNode; //using parent node
+            prnt.style.color="blue";
+
+        }
+        function Previous()
+        {
+
+            var dv=document.getElementById("para");
+            var sblng= dv.previousElementSibling; //using sibling node
+            sblng.style.color="blue";
+
+        }
+        function next()
+        {
+
+            var dv=document.getElementById("para");
+            var sblng= dv.nextElementSibling; //using sibling node
+            sblng.style.color="red";
+
+        }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <h2>First Paragraph</h2>
+        <p id="para">
+            This is the first paragraph. Islamabad is the capital of Pakistan.
+        </p>
+        <h2>Second Paragraph</h2>
+        <p>
+            This is the second paragraph. karachi is the first capital of Pakistan.
+        </p>
+        <p>Pakistan is an Islamic state where every one can worship there religion peacefully.</p>
+    
+    </div>
+    <button onclick="chng()">To Change Color using child node</button>
+    <button onclick="chnge()">To Change Color using parent node</button>
+    <button onclick="Previous()">To Change Color of Previous node</button>
+    <button onclick="next()">To Change Color of next node</button>
+    
+</body>
+</html>
